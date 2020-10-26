@@ -1,9 +1,7 @@
 <?php
 
-
 class Connection
 {
-
     public function openConnection(): PDO
     {
 // Try to figure out what these should be for you
@@ -25,8 +23,4 @@ class Connection
 // Why we do this here
         return $pdo;
     }
-
-}
-
-
 }
