@@ -4,11 +4,10 @@ class Connection
 {
     public function openConnection(): PDO
     {
-// Try to figure out what these should be for you
-        $dbhost    = "localhost";//probably localhost
-        $dbuser    = "becode";
-        $dbpass    = "becode123";
-        $db        = "becode";
+        $dbhost = "localhost";
+        $dbuser = "becode";
+        $dbpass = "becode123";
+        $db = "becode";
 
 
         $driverOptions = [
@@ -17,10 +16,6 @@ class Connection
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ];
 
-// Try to understand what happens here
-        $pdo = new PDO('mysql:host=' . $dbhost . ';dbname=' . $db, $dbuser, $dbpass, $driverOptions);
-
-// Why we do this here
-        return $pdo;
+        return new PDO('mysql:host=' . $dbhost . ';dbname=' . $db, $dbuser, $dbpass, $driverOptions);
     }
 }

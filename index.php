@@ -8,7 +8,14 @@ error_reporting(E_ALL);
 require 'Model/Connection.php';
 require 'Model/Student.php';
 require 'Model/StudentLoader.php';
-require 'View/insert.php';
-require 'Controller/InsertController.php';
+require 'Controller/HomepageController.php';
+require 'View/homepage.php';
 
-$controller = new InsertController();
+$controller = new HomepageController();
+
+if(isset($_GET['page']) && $_GET['page'] === 'info') {
+    $controller = new InfoController();
+}
+
+
+//$controller->render($_GET, $_POST);

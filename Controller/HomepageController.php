@@ -1,11 +1,11 @@
 <?php
 
 
-class InsertController
+class HomepageController
 {
     public function display()
     {
-        require_once "View/insert.php";
+        require_once "View/homepage.php";
         if (!empty($_POST['firstname']) && !empty($_POST['lastname'] && !empty($_POST['email']))) {
             $fname= $_POST['firstname'];
             $lname = $_POST['lastname'];
