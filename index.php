@@ -8,8 +8,18 @@ error_reporting(E_ALL);
 require 'Model/Connection.php';
 require 'Model/Student.php';
 require 'Model/StudentLoader.php';
-require 'Controller/HomepageController.php';
+
+require 'Controller/InsertController.php';
 require 'View/insert.php';
 
-$controller = new HomepageController();
-$controller->render();
+$controller = new InsertController();
+if(isset($_GET['page']) && $_GET['page'] === 'info') {
+    $display = new DisplayStudent();
+    $display->display();
+} /*elseif (isset($_GET['user'])) {
+    $profile = new DisplayStudent();
+    $profile->displayProfile($_GET['user']);
+}*/
+else {
+    $controller->render();
+}

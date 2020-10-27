@@ -5,14 +5,9 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+include 'View/includes/header.php'
 ?>
 
-<!doctype html>
-<html lang="en">
-<head>
-    <title>MySQL Challenge</title>
-</head>
-<body>
 <form method="post">
     <label for="firstname">First Name</label>
     <input type="text" name="firstname">
@@ -22,5 +17,4 @@ error_reporting(E_ALL);
     <input type="text" name="email">
     <button type="submit">Submit</button>
 </form>
-</body>
-</html>
+<?php include 'View/includes/footer.php' ?>

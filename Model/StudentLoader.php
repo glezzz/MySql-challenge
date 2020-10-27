@@ -5,7 +5,7 @@ class StudentLoader extends Connection
 {
     private array $students = [];
 
-    public function __construct(array $students)
+    public function __construct()
     {
         if (empty($this->student)) {
             $pdo = $this->openConnection();
