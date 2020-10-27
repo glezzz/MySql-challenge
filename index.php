@@ -12,10 +12,4 @@ require 'Controller/HomepageController.php';
 require 'View/homepage.php';
 
 $controller = new HomepageController();
-
-if(isset($_GET['page']) && $_GET['page'] === 'info') {
-    $controller = new InfoController();
-}
-
-
-//$controller->render($_GET, $_POST);
+$controller->render();

@@ -5,12 +5,13 @@ class StudentInsert extends Connection
 {
     public function __construct($firstname, $lastname, $email)
     {
-        $sql = $this->Connection()->prepare("INSERT INTO student (firstname, lastname, email)
-VALUES (:firstname, :lastname, :email)");
-        $sql->bindValue(':firstname', $firstname);
-        $sql->bindValue(':lastname', $lastname);
-        $sql->bindValue(':email', $email);
-        $sql->execute();
+        $handle = $this->openConnection()->prepare('INSERT INTO student (first_name, last_name, email) VALUES (:firstname, :lastname, :email)');
+        $handle->bindValue(':firstname', $firstname);
+        $handle->bindValue(':lastname', $lastname);
+        $handle->bindValue(':email', $email);
+        $handle->execute();
+
+
 
     }
 
