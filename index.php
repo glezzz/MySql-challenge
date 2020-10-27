@@ -9,7 +9,7 @@ require 'Model/Connection.php';
 require 'Model/Student.php';
 require 'Model/StudentLoader.php';
 require 'Controller/HomepageController.php';
-require 'View/homepage.php';
+require 'View/insert.php';
 
 $controller = new HomepageController();
 $controller->render();

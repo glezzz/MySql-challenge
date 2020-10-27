@@ -7,16 +7,33 @@ class StudentLoader extends Connection
 
     public function __construct(array $students)
     {
-        $handle = $this->openConnection()->prepare("INSERT * FROM student");
-        $handle->execute();
-        foreach ($handle->fetchAll() as $student) {
-            $this->students[$student['id']] = new $student ($student['firstname'], $student['lastname'], $student['email']);
+        if (empty($this->student)) {
+            $pdo = $this->openConnection();
+            $statement = $pdo->prepare('SELECT * FROM student');
+            $statement->execute();
+            $students = $statement->fetchAll();
+            foreach ($students as $student) {
+                $this->students[$student['id']] = new Student(
+                                                                (int)$student['id'],
+                                                                (string)$student['firstname'],
+                                                                (string)$student['lastname'],
+                                                                (string)$student['email']
+                                                                );
+            }
         }
     }
 
     public function getStudents(): array
     {
         return $this->students;
+    }
+
+    public function countStudent(): int {
+        return count($this->students);
+    }
+
+    public function displayStudent($id) {
+        return $this->students[$id];
     }
 
 
