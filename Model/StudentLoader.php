@@ -1,6 +1,5 @@
 <?php
 
-
 class StudentLoader extends Connection
 {
     private array $students;
@@ -15,8 +14,8 @@ class StudentLoader extends Connection
             foreach ($students as $student) {
                 $this->students[$student['id']] = new Student(
                                                                 (int)$student['id'],
-                                                                (string)$student['firstname'],
-                                                                (string)$student['lastname'],
+                                                                (string)$student['first_name'],
+                                                                (string)$student['last_name'],
                                                                 (string)$student['email']
                                                                 );
             }

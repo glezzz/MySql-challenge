@@ -16,7 +16,8 @@ include 'View/includes/header.php'
     <label for="email">Email</label>
     <input type="text" name="email">
     <button type="submit">Submit</button>
-    <p><a href="index.php?page=login">Login </a></p>
+    <p><a href="index.php?page=login">Login</a></p>
+    <p><a href="index.php?page=login">Table</a></p>
 
 </form>
 <?php include 'View/includes/footer.php' ?>
