@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 include 'View/includes/header.php'
 ?>
 
-<form method="post">
+<form action="" method="post">
     <label for="firstname">First Name</label>
     <input type="text" name="firstname">
     <label for="lastname">Last Name</label>

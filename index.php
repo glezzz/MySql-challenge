@@ -13,13 +13,14 @@ require 'Controller/InsertController.php';
 require 'View/insert.php';
 
 $controller = new InsertController();
-if(isset($_GET['page']) && $_GET['page'] === 'info') {
+if (isset($_GET['page']) && $_GET['page'] === 'info') {
     $display = new DisplayStudent();
     $display->display();
-} /*elseif (isset($_GET['user'])) {
+
+/*} elseif (isset($_GET['user'])) {
     $profile = new DisplayStudent();
-    $profile->displayProfile($_GET['user']);
-}*/
-else {
+    $profile->displayProfile($_GET['user']);*/
+
+} else {
     $controller->render();
 }

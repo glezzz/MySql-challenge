@@ -7,7 +7,8 @@ class DisplayStudent
     {
         $studentLoader = new StudentLoader();
         $students = $studentLoader->getStudents();
-        
+
+        require 'View/display.php';
     }
 
 }

@@ -1,6 +1,5 @@
 <?php
 
-
 class Student extends Connection
 {
     private int $id;
@@ -58,7 +57,7 @@ class Student extends Connection
     //create students
     public function saveStudent(PDO $data)
     {
-        $handle = $data->prepare('INSERT INTO student (firstname, lastname, email) VALUES (:firstname, :lastname, :email)');
+        $handle = $data->prepare('INSERT INTO student (first_name, last_name, email) VALUES (:firstname, :lastname, :email)');
         $handle->bindValue('firstname', ucfirst($this->getFirstName()));
         $handle->bindValue('lastname', ucfirst($this->getLastName()));
         $handle->bindValue('email', $this->getEmail());
