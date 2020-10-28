@@ -10,17 +10,21 @@ require 'Model/Student.php';
 require 'Model/StudentLoader.php';
 
 require 'Controller/InsertController.php';
-require 'View/insert.php';
+require 'Controller/DisplayStudent.php';
 
-$controller = new InsertController();
-if (isset($_GET['page']) && $_GET['page'] === 'info') {
+if(isset($_GET['page']) && $_GET['page'] === 'info') {
     $display = new DisplayStudent();
     $display->display();
 
-/*} elseif (isset($_GET['user'])) {
+} elseif (isset($_GET['user'])) {
     $profile = new DisplayStudent();
-    $profile->displayProfile($_GET['user']);*/
+    $profile->displayProfile($_GET['user']);
+
+} elseif (isset($_GET['page']) && $_GET['page'] === 'login') {
+    $logIn = new InsertController();
+    $logIn->logIn();
 
 } else {
+    $controller = new InsertController();
     $controller->render();
 }

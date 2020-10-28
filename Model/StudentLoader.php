@@ -3,7 +3,7 @@
 
 class StudentLoader extends Connection
 {
-    private array $students = [];
+    private array $students;
 
     public function __construct()
     {
@@ -35,6 +35,4 @@ class StudentLoader extends Connection
     public function displayStudent($id) {
         return $this->students[$id];
     }
-
-
 }

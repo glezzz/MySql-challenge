@@ -1,4 +1,13 @@
-<?php include 'View/includes/header.php'?>
+<?php
+declare(strict_types=1);
+
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
+include 'View/includes/header.php'
+?>
+
     <p><a href="index.php">Back to homepage</a></p>
     <table class="table table-striped">
         <thead>
