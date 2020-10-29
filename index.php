@@ -10,16 +10,16 @@ require 'Model/Student.php';
 require 'Model/StudentLoader.php';
 
 require 'Controller/RegisterController.php';
-require 'Controller/DisplayController.php';
+require 'Controller/OverviewController.php';
 require 'Controller/LoginController.php';
 
 
-if(isset($_GET['page']) && $_GET['page'] === 'overview') {
-    $display = new DisplayController();
-    $display->display();
+if (isset($_GET['page']) && $_GET['page'] === 'overview') {
+    $display = new OverviewController();
+    $display->displayOverview();
 
 } elseif (isset($_GET['user'])) {
-    $profile = new DisplayController();
+    $profile = new OverviewController();
     $profile->displayProfile($_GET['user']);
 
 } elseif (isset($_GET['page']) && $_GET['page'] === 'login') {

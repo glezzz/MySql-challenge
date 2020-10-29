@@ -1,14 +1,14 @@
 <?php
 
 
-class DisplayController
+class OverviewController
 {
-    public function display()
+    public function displayOverview()
     {
         $studentLoader = new StudentLoader();
         $students = $studentLoader->getStudents();
 
-        require 'View/display.php';
+        require 'View/overview.php';
     }
 
     public function displayProfile($id) {

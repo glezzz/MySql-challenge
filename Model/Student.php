@@ -6,6 +6,7 @@ class Student extends Connection
     private string $firstName;
     private string $lastName;
     private string $email;
+    private string $password;
 
     /**
      * Student constructor.
@@ -13,13 +14,15 @@ class Student extends Connection
      * @param string $firstName
      * @param string $lastName
      * @param string $email
+     * @param string $password
      */
-    public function __construct(int $id, string $firstName, string $lastName, string $email)
+    public function __construct(/*int $id, */string $firstName, string $lastName, string $email, string $password)
     {
-        $this->id = $id;
+        /*$this->id = $id;*/
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
+        $this->password = $password;
     }
 
     /**
@@ -54,13 +57,22 @@ class Student extends Connection
         return $this->email;
     }
 
-    //create students
+    /**
+     * @return string
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    //save student to DB
     public function saveStudent(PDO $data)
     {
-        $handle = $data->prepare('INSERT INTO student (first_name, last_name, email) VALUES (:firstname, :lastname, :email)');
+        $handle = $data->prepare('INSERT INTO student (first_name, last_name, email, password) VALUES (:firstname, :lastname, :email, :password)');
         $handle->bindValue('firstname', ucfirst($this->getFirstName()));
         $handle->bindValue('lastname', ucfirst($this->getLastName()));
         $handle->bindValue('email', $this->getEmail());
+        $handle->bindValue('password', $this->getPassword());
         $handle->execute();
     }
 
