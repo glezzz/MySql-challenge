@@ -13,7 +13,7 @@ class StudentLoader extends Connection
             $students = $statement->fetchAll();
             foreach ($students as $student) {
                 $this->students[$student['id']] = new Student(
-                                                                /*(int)$student['id'],*/
+                                                                (int)$student['id'],
                                                                 (string)$student['first_name'],
                                                                 (string)$student['last_name'],
                                                                 (string)$student['email'],
