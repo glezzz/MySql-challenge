@@ -1,7 +1,7 @@
 <?php
 
 
-class DisplayStudent
+class DisplayController
 {
     public function display()
     {

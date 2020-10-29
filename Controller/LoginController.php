@@ -1,18 +1,9 @@
 <?php
 
-class InsertController
+class LoginController
 {
-    public function render()
+    public function logIn()
     {
-        if (!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['email'])) {
-            $loader = new StudentLoader();
-            $student = new Student($loader->countStudent(), $_POST['firstname'], $_POST['lastname'], $_POST['email']);
-            $student->save();
-        }
-        require 'View/insert.php';
-    }
-
-    public function logIn() {
         if (!empty($_POST['email'])) {
             $loader = new StudentLoader();
             $students = $loader->getStudents();
@@ -20,7 +11,7 @@ class InsertController
             $error = "";
             foreach ($students as $student) {
                 $counter++;
-                if ($_POST['email'] == $student->getEmail() && password_verify($_POST['password'], $student->getPassword() )) {
+                if ($_POST['email'] == $student->getEmail() && password_verify($_POST['password'], $student->getPassword())) {
                     header("location: http://localhost/crud-mysql/index.php?page=info");
                     break;
                 } elseif ($loader->countStudent() == $counter) {
@@ -30,6 +21,5 @@ class InsertController
         }
         require 'View/login.php';
     }
-
 
 }

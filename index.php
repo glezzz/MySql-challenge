@@ -9,22 +9,24 @@ require 'Model/Connection.php';
 require 'Model/Student.php';
 require 'Model/StudentLoader.php';
 
-require 'Controller/InsertController.php';
-require 'Controller/DisplayStudent.php';
+require 'Controller/RegisterController.php';
+require 'Controller/DisplayController.php';
+require 'Controller/LoginController.php';
 
-if(isset($_GET['page']) && $_GET['page'] === 'info') {
-    $display = new DisplayStudent();
+
+if(isset($_GET['page']) && $_GET['page'] === 'overview') {
+    $display = new DisplayController();
     $display->display();
 
 } elseif (isset($_GET['user'])) {
-    $profile = new DisplayStudent();
+    $profile = new DisplayController();
     $profile->displayProfile($_GET['user']);
 
 } elseif (isset($_GET['page']) && $_GET['page'] === 'login') {
-    $logIn = new InsertController();
+    $logIn = new LoginController();
     $logIn->logIn();
 
 } else {
-    $controller = new InsertController();
+    $controller = new RegisterController();
     $controller->render();
 }

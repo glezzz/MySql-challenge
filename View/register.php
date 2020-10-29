@@ -9,15 +9,19 @@ include 'View/includes/header.php'
 ?>
 
 <form action="" method="post">
-    <label for="firstname">First Name</label>
+    <label for="firstname">First Name:</label>
     <input type="text" name="firstname">
-    <label for="lastname">Last Name</label>
+    <label for="lastname">Last Name:</label>
     <input type="text" name="lastname">
-    <label for="email">Email</label>
+    <label for="email">Email:</label>
     <input type="text" name="email">
+    <label for="password">Password:</label>
+    <input type="text" name="password">
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="text" name="confirm-password">
     <button type="submit">Submit</button>
     <p><a href="index.php?page=login">Login</a></p>
-    <p><a href="index.php?page=login">Table</a></p>
+    <p><a href="index.php?page=overview">Overview</a></p>
 
 </form>
 <?php include 'View/includes/footer.php' ?>
